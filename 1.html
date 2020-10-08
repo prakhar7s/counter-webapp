@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            height: 90vh;
+            width: 89vw;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            height: 89vh;
+        }
+
+        .btn {
+            width: 7%;
+            height: 13%;
+            margin: 40px;
+            font-size: 40px;
+            background: linear-gradient(180deg, #1000ff, #01d1dd);
+            border-radius: 8px;
+            cursor: pointer;
+            border-width: 0;
+            outline: none;
+            box-shadow: 0px 3px 5px -1.5px rgba(0, 0, 0, 0.75);
+            transition: transform 80ms ease-in-out;
+        }
+
+        .btn:hover {
+            opacity: 0.80;
+            transform: scale(1.15);
+        }
+
+        #data {
+            font-size: 50px;
+            color: #000;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        body > h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: xx-large;
+            font-weight: 100;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Counter App</h1>
+    <div class="container">
+        <button class="minus btn">-</button>
+        <h2 id="data"></h2>
+        <button class="plus btn">+</button>
+    </div>
+    <script>
+        const minus = document.getElementsByClassName("minus")[0];
+        const plus = document.getElementsByClassName("plus")[0];
+        const data = document.getElementById("data");
+
+        var x = 0;
+        data.textContent = x;
+
+        minus.addEventListener("click", () => {
+            x--;
+            data.textContent = x;
+        });
+
+        plus.addEventListener("click", () => {
+            x++;
+            data.textContent = x;
+        });
+    </script>    
+</body>
+</html>
